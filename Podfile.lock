@@ -1,0 +1,86 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CYLTabBarController (1.10.0)
+  - DZNEmptyDataSet (1.8.1)
+  - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManager (4.0.9)
+  - LLKit (1.0.0):
+    - LLKit/LLBaseKit (= 1.0.0)
+  - LLKit/LLBaseKit (1.0.0):
+    - AFNetworking (~> 2.6.0)
+    - CYLTabBarController
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - IQKeyboardManager
+    - Masonry
+    - MBProgressHUD (~> 0.9.1)
+    - MJRefresh
+    - SDWebImage (~> 3.7.3)
+    - TYPagerController
+    - YYKit
+  - Masonry (1.0.2)
+  - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.12)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - TYPagerController (1.0.2)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.6.0)
+  - CYLTabBarController
+  - DZNEmptyDataSet
+  - FDFullscreenPopGesture
+  - IQKeyboardManager
+  - LLKit (from `.`)
+  - Masonry
+  - MBProgressHUD (~> 0.9.1)
+  - MJRefresh
+  - SDWebImage (~> 3.7.3)
+  - TYPagerController
+  - YYKit (~> 1.0.7)
+
+EXTERNAL SOURCES:
+  LLKit:
+    :path: "."
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CYLTabBarController: 2de9a4c26f50d33574398becf8e7b0aaed794240
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
+  LLKit: b1a5ae051c80c65c144824b070ab621f065810a6
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  TYPagerController: 0b3e3e589a217ff537d5f78e1e76594beaa4cfc6
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 5b6d6de02bcc20e8fc1e8ec13cb3db464ab42fac
+
+COCOAPODS: 1.2.0.beta.3
