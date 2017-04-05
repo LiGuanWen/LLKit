@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BrowerImageCell" id="FsR-oO-fBY" customClass="BrowerImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-eK-VBq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1i9-du-gCn">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1i9-du-gCn" secondAttribute="height" multiplier="1:1" id="LmD-kn-DMe"/>
+                                </constraints>
+                                <state key="normal" image="btn_nav_back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="FsR-oO-fBY" eventType="touchUpInside" id="OIs-z9-M1V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uch-oy-t6I">
+                                <rect key="frame" x="276" y="0.0" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uch-oy-t6I" secondAttribute="height" multiplier="1:1" id="nZk-BU-Qa3"/>
+                                </constraints>
+                                <state key="normal" image="album_btn_delete_white">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="more:" destination="FsR-oO-fBY" eventType="touchUpInside" id="ScC-pD-XN9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtH-j1-w79">
+                                <rect key="frame" x="97" y="13" width="127" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DtH-j1-w79" secondAttribute="height" multiplier="130:21" id="DR6-mi-740"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Uch-oy-t6I" secondAttribute="bottom" id="04W-y8-4nh"/>
+                            <constraint firstItem="Uch-oy-t6I" firstAttribute="top" secondItem="tcj-eK-VBq" secondAttribute="top" id="6x4-mA-o7L"/>
+                            <constraint firstAttribute="width" secondItem="tcj-eK-VBq" secondAttribute="height" multiplier="80:11" id="IrT-9K-0Ue"/>
+                            <constraint firstAttribute="centerY" secondItem="DtH-j1-w79" secondAttribute="centerY" constant="-0.5" id="M8h-QO-lkR"/>
+                            <constraint firstAttribute="centerX" secondItem="DtH-j1-w79" secondAttribute="centerX" id="VRj-ON-Y51"/>
+                            <constraint firstAttribute="trailing" secondItem="Uch-oy-t6I" secondAttribute="trailing" id="hP3-qr-uYA"/>
+                            <constraint firstAttribute="bottom" secondItem="1i9-du-gCn" secondAttribute="bottom" id="hal-2a-YPn"/>
+                            <constraint firstItem="1i9-du-gCn" firstAttribute="leading" secondItem="tcj-eK-VBq" secondAttribute="leading" id="lCI-Bs-fmc"/>
+                            <constraint firstItem="1i9-du-gCn" firstAttribute="top" secondItem="tcj-eK-VBq" secondAttribute="top" id="scb-rf-6ap"/>
+                        </constraints>
+                    </view>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THA-2q-mW5">
+                        <rect key="frame" x="145" y="263" width="30" height="34"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="playAction:" destination="FsR-oO-fBY" eventType="touchUpInside" id="A1I-oY-gVU"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tcj-eK-VBq" firstAttribute="leading" secondItem="FsR-oO-fBY" secondAttribute="leading" id="FMv-xj-7WJ"/>
+                <constraint firstAttribute="centerY" secondItem="THA-2q-mW5" secondAttribute="centerY" constant="4" id="Wnd-e2-hUp"/>
+                <constraint firstAttribute="trailing" secondItem="tcj-eK-VBq" secondAttribute="trailing" id="ZYJ-Jt-1Lg"/>
+                <constraint firstAttribute="centerX" secondItem="THA-2q-mW5" secondAttribute="centerX" id="bFd-ot-4r2"/>
+                <constraint firstItem="tcj-eK-VBq" firstAttribute="top" secondItem="FsR-oO-fBY" secondAttribute="top" id="h1R-jX-HF1"/>
+            </constraints>
+            <connections>
+                <outlet property="backButton" destination="1i9-du-gCn" id="UCq-19-Pws"/>
+                <outlet property="deleteButton" destination="Uch-oy-t6I" id="ZwK-eu-sVA"/>
+                <outlet property="moreButton" destination="Uch-oy-t6I" id="BQ2-z7-aOy"/>
+                <outlet property="pageNumberLabel" destination="DtH-j1-w79" id="1Ws-MV-GDb"/>
+                <outlet property="playButton" destination="THA-2q-mW5" id="wY7-EI-osg"/>
+                <outlet property="topView" destination="tcj-eK-VBq" id="fjM-5j-BDR"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="album_btn_delete_white" width="20" height="20"/>
+        <image name="btn_nav_back" width="32" height="32"/>
+    </resources>
+</document>
