@@ -1,7 +1,7 @@
 platform :ios, '8.0'
 
-target ’LLKitDemo’ do
-    pod ‘LLKit’, :path => '.'
+target 'LLKitDemo' do
+    pod 'LLKit', :path => '.'
     pod 'CYLTabBarController'
     pod 'FDFullscreenPopGesture'
     pod 'Masonry'
