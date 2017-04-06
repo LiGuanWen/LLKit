@@ -7,7 +7,7 @@
 //
 
 #import "SegmentView.h"
-
+#import "YYKit.h"
 
 static NSInteger const kPointViewTag = 2000;
 @interface SegmentView ()
@@ -34,12 +34,11 @@ static NSInteger const kPointViewTag = 2000;
             
             // 小红点
             UIView *pointView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 7, 7)];
-            [pointView setCornerRadius:3.5];
+            pointView.layer.cornerRadius = 3.5;
             pointView.backgroundColor = [UIColor redColor];
             pointView.tag = kPointViewTag;
             pointView.hidden = YES;
             [button addSubview:pointView];
-            
             [self addSubview:button];
             [self.btnsArray addObject:button];
         }

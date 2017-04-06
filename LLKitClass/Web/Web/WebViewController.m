@@ -12,8 +12,8 @@
 
 // JS Bridge
 #import "JSBridge.h"
-#import "HUD.h"
-
+#import "LLHud.h"
+#import "YYKit.h"
 #import "MJRefreshControl.h"
 
 #define WebViewMessageError @"加载失败"
@@ -219,7 +219,7 @@
     }
     
     if (self.shouldShowHud == YES) {
-        [HUD hideHUDInView:self.view];
+        [LLHud hideHUDInView:self.view];
     }
     
     [self.webView.scrollView.mj_header endRefreshing];
@@ -234,7 +234,7 @@
     }
     
     if (self.shouldShowHud == YES) {
-        [HUD hideHUDInView:self.view];
+        [LLHud hideHUDInView:self.view];
     }
     [self.webView.scrollView.mj_header endRefreshing];
 }
@@ -281,7 +281,7 @@
     [self.view addSubview:self.webView];
     
     if (self.shouldShowHud == YES) {
-        [HUD showHUDInView:self.view title:@"加载中..."];
+        [LLHud showHUDInView:self.view title:@"加载中..."];
     }else {
         // Init Progress View
         CGFloat progressBarHeight = 3.f;

@@ -7,8 +7,7 @@
 //
 
 #import "NavSegmentView.h"
-
-
+#import "YYKit.h"
 
 @interface NavSegmentView ()
 

@@ -7,7 +7,7 @@
 //
 
 #import "UIColor+Config.h"
-
+#import "YYKit.h"
 @implementation UIColor (Config)
 
 + (UIColor *)colorWithHexString:(NSString *)str alpha:(CGFloat)alpha
