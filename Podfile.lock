@@ -24,19 +24,45 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (4.0.9)
+  - libwebp (0.5.1):
+    - libwebp/core (= 0.5.1)
+    - libwebp/dec (= 0.5.1)
+    - libwebp/demux (= 0.5.1)
+    - libwebp/dsp (= 0.5.1)
+    - libwebp/enc (= 0.5.1)
+    - libwebp/mux (= 0.5.1)
+    - libwebp/utils (= 0.5.1)
+    - libwebp/webp (= 0.5.1)
+  - libwebp/core (0.5.1):
+    - libwebp/webp
+  - libwebp/dec (0.5.1):
+    - libwebp/core
+  - libwebp/demux (0.5.1):
+    - libwebp/core
+  - libwebp/dsp (0.5.1):
+    - libwebp/core
+  - libwebp/enc (0.5.1):
+    - libwebp/core
+  - libwebp/mux (0.5.1):
+    - libwebp/core
+  - libwebp/utils (0.5.1):
+    - libwebp/core
+  - libwebp/webp (0.5.1)
   - LLKit (1.0.0):
-    - LLKit/LLBaseKit (= 1.0.0)
-  - LLKit/LLBaseKit (1.0.0):
-    - AFNetworking (~> 2.6.0)
     - CYLTabBarController
     - DZNEmptyDataSet
     - FDFullscreenPopGesture
     - IQKeyboardManager
+    - libwebp
     - Masonry
     - MBProgressHUD (~> 0.9.1)
     - MJRefresh
-    - SDWebImage (~> 3.7.3)
+    - SDWebImage (~> 3.7.6)
+    - SDWebImage/WebP
     - TYPagerController
+    - YYKit
+  - LLNetworking (1.0.0):
+    - AFNetworking (~> 2.6.0)
     - YYKit
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
@@ -44,6 +70,9 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - SDWebImage/WebP (3.7.6):
+    - libwebp
+    - SDWebImage/Core
   - TYPagerController (1.0.2)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -56,16 +85,25 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - IQKeyboardManager
   - LLKit (from `.`)
+  - LLNetworking (from `https://github.com/LiGuanWen/LLNetworking.git`, branch `1.0.0`)
   - Masonry
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh
   - SDWebImage (~> 3.7.3)
   - TYPagerController
-  - YYKit (~> 1.0.7)
+  - YYKit
 
 EXTERNAL SOURCES:
   LLKit:
     :path: "."
+  LLNetworking:
+    :branch: 1.0.0
+    :git: https://github.com/LiGuanWen/LLNetworking.git
+
+CHECKOUT OPTIONS:
+  LLNetworking:
+    :commit: 95aa18612d2822165bd232246c4336576e1b5de1
+    :git: https://github.com/LiGuanWen/LLNetworking.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -73,7 +111,9 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
-  LLKit: bda58e9a8dddda9d1b75a4ad6677fa0ccdb0b7d5
+  libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
+  LLKit: ef3d6ac68d451ca713f6d3fcf15a179617e24754
+  LLNetworking: 4efb30863c9a1955b5af772dbf02f1281fcfe4fe
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -81,6 +121,6 @@ SPEC CHECKSUMS:
   TYPagerController: 0b3e3e589a217ff537d5f78e1e76594beaa4cfc6
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9d62873255b02f4b16eb479617db99f3225ef08a
+PODFILE CHECKSUM: acaa11f56815671240040422f68e17b2ddfa0e13
 
 COCOAPODS: 1.2.0.beta.3

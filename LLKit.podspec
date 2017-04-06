@@ -12,23 +12,57 @@ s.description = %{
    This is a Amazing Project!!!
 }
 
-s.default_subspecs = 'LLBaseKit'
-  s.subspec 'LLBaseKit' do |baseKit|
-    baseKit.source_files  = 'LLKit/LLBaseKit/**/*.{h,m}'
-    baseKit.resource = 'LLKit/LLBaseKit/**/*.{xib,png}'
-    baseKit.dependency 'YYKit'
-    baseKit.dependency "FDFullscreenPopGesture"
-    baseKit.dependency 'CYLTabBarController'
-    baseKit.dependency 'Masonry'
-    baseKit.dependency 'IQKeyboardManager'
-    baseKit.dependency 'MJRefresh'
-    baseKit.dependency 'TYPagerController'
-    baseKit.dependency 'DZNEmptyDataSet'
-    baseKit.dependency 'AFNetworking', '~> 2.6.0'
-    baseKit.dependency 'SDWebImage', '~> 3.7.3'
-    baseKit.dependency 'MBProgressHUD', '~> 0.9.1'
+  # s.source_files  = "LLKitClass/**/*.{h,m,mm,a,framework}"
 
-  end
+
+    s.source_files  = 'LLKitClass/**/*.{h,m,mm,a,framework}'
+        s.resource = 'LLKitClass/**/*.{xib,png}'
+
+    s.xcconfig = { 
+         'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
+     }
+    s.framework = 'ImageIO'
+
+    s.dependency 'YYKit'
+    s.dependency "FDFullscreenPopGesture"
+    s.dependency 'CYLTabBarController'
+    s.dependency 'Masonry'
+    s.dependency 'IQKeyboardManager'
+    s.dependency 'MJRefresh'
+    s.dependency 'TYPagerController'
+    s.dependency 'DZNEmptyDataSet'
+    s.dependency 'SDWebImage', '~> 3.7.3'
+    s.dependency 'MBProgressHUD', '~> 0.9.1'
+    s.dependency 'libwebp'
+    s.dependency 'SDWebImage','~> 3.7.6'
+    s.dependency 'SDWebImage/WebP'
+
+# s.default_subspecs = 'LLBaseKit','LLWebP'
+
+#    s.subspec 'LLBaseKit' do |baseKit|
+#     baseKit.source_files  = 'LLKitClass/LLBaseKit/**/*.{h,m}'
+#     baseKit.resource = 'LLKitClass/LLBaseKit/**/*.{xib,png}'
+#     baseKit.dependency 'YYKit'
+#     baseKit.dependency "FDFullscreenPopGesture"
+#     baseKit.dependency 'CYLTabBarController'
+#     baseKit.dependency 'Masonry'
+#     baseKit.dependency 'IQKeyboardManager'
+#     baseKit.dependency 'MJRefresh'
+#     baseKit.dependency 'TYPagerController'
+#     baseKit.dependency 'DZNEmptyDataSet'
+#     baseKit.dependency 'SDWebImage', '~> 3.7.3'
+#     baseKit.dependency 'MBProgressHUD', '~> 0.9.1'
+#   end
+#  s.subspec 'LLWebP' do |webp|
+#     webp.source_files  = 'LLKitClass/LLWebP/**/*.{h,m}'
+#     webp.xcconfig = { 
+#          'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
+#      }
+#     webp.framework = 'ImageIO'
+#     webp.dependency 'libwebp'
+#     webp.dependency 'SDWebImage','~> 3.7.6'
+#     webp.dependency 'SDWebImage/WebP'
+#     end
 
 end
 
