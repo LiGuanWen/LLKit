@@ -8,7 +8,7 @@
 
 #import "HorizontalSelector.h"
 #import "HorizontalSelectorCell.h"
-
+#import "YYKit.h"
 @interface HorizontalSelector ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -23,14 +23,19 @@
     [super awakeFromNib];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    [self.collectionView registerCellNibWithNibName:kHorizontalSelectorCell];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"HorizontalSelectorCell" bundle:nil] forCellWithReuseIdentifier:@"HorizontalSelectorCell"];
 }
 
 + (instancetype)initSelectorWithFrame:(CGRect)frame
 {
-    HorizontalSelector * selector = [Utility loadNibWithNibName:@"HorizontalSelector"];
-    selector.frame = frame;
-    return selector;
+    NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:@"HorizontalSelector" owner:nil options:nil];
+    if (nibs.count > 0) {
+        HorizontalSelector * selector = nibs[0];
+        selector.frame = frame;
+        return selector;
+    }else{
+        return nil;
+    }
 }
 
 - (void)setTitles:(NSArray *)titles

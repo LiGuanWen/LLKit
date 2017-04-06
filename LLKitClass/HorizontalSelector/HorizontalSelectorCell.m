@@ -7,7 +7,7 @@
 //
 
 #import "HorizontalSelectorCell.h"
-
+#import "YYKit.h"
 
 @implementation HorizontalSelectorCell
 
