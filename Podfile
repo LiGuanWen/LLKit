@@ -10,8 +10,7 @@ target 'LLKitDemo' do
     pod 'MJRefresh'
     pod 'TYPagerController'
     pod 'DZNEmptyDataSet'
-    pod 'YYKit'
-    pod 'AFNetworking', '~> 2.6.0'
+#    pod 'YYKit'
     pod 'MBProgressHUD', '~> 0.9.1'
     pod 'SDWebImage', '~> 3.7.3'
 end
