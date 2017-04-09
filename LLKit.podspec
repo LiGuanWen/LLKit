@@ -23,7 +23,7 @@ s.description = %{
      }
     s.framework = 'ImageIO'
 
-    # s.dependency 'YYKit'
+    s.dependency 'YYKit'
     s.dependency "FDFullscreenPopGesture"
     s.dependency 'CYLTabBarController'
     s.dependency 'Masonry'
