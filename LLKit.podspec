@@ -36,6 +36,8 @@ s.description = %{
     s.dependency 'libwebp'
     s.dependency 'SDWebImage','~> 3.7.6'
     s.dependency 'SDWebImage/WebP'
+    s.dependency 'HYBNetworking', '~> 3.3.0'
+
 
 # s.default_subspecs = 'LLBaseKit','LLWebP'
 
