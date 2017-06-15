@@ -14,4 +14,5 @@ target 'LLKitDemo' do
     pod 'YYKit'
     pod 'MBProgressHUD', '~> 0.9.1'
     pod 'SDWebImage', '~> 4.0.0'
+    pod 'SDCycleScrollView', '~> 1.66'
 end
