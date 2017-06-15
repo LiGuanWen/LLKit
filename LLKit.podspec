@@ -34,7 +34,7 @@ s.description = %{
     s.dependency 'SDWebImage', '~> 3.7.3'
     s.dependency 'MBProgressHUD', '~> 0.9.1'
     s.dependency 'libwebp'
-    s.dependency 'SDWebImage','~> 3.7.6'
+    s.dependency 'SDWebImage', '~> 4.0.0'
     s.dependency 'SDWebImage/WebP'
     s.dependency 'HYBNetworking', '~> 3.3.0'
 

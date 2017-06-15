@@ -13,5 +13,5 @@ target 'LLKitDemo' do
     pod 'DZNEmptyDataSet'
     pod 'YYKit'
     pod 'MBProgressHUD', '~> 0.9.1'
-    pod 'SDWebImage', '~> 3.7.3'
+    pod 'SDWebImage', '~> 4.0.0'
 end
