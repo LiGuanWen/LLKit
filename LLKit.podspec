@@ -27,7 +27,6 @@ s.description = %{
     s.dependency "FDFullscreenPopGesture"
     s.dependency 'CYLTabBarController'
     s.dependency 'Masonry'
-    s.dependency 'IQKeyboardManager'
     s.dependency 'MJRefresh'
     s.dependency 'TYPagerController'
     s.dependency 'DZNEmptyDataSet'
@@ -36,7 +35,6 @@ s.description = %{
     s.dependency 'libwebp'
     s.dependency 'SDWebImage', '~> 4.0.0'
     s.dependency 'SDWebImage/WebP'
-    s.dependency 'HYBNetworking', '~> 3.3.0'
     s.dependency 'SDCycleScrollView', '~> 1.66'
 
 
