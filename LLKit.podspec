@@ -30,11 +30,11 @@ s.description = %{
     s.dependency 'MJRefresh'
     s.dependency 'TYPagerController'
     s.dependency 'DZNEmptyDataSet'
-    s.dependency 'SDWebImage', '~> 3.7.3'
     s.dependency 'MBProgressHUD', '~> 0.9.1'
     s.dependency 'libwebp'
-    s.dependency 'SDWebImage', '~> 4.0.0'
+    s.dependency 'SDWebImage'
     s.dependency 'SDWebImage/WebP'
+    s.dependency 'SDWebImage/GIF'
     s.dependency 'SDCycleScrollView', '~> 1.66'
 
 
