@@ -21,7 +21,8 @@ s.default_subspecs = 'HorizontalSelector',
                      'LLWeb',
                      'LLWebp',
                      'LLMJRefreshControl',
-                     'NavSegmentView'
+                     'NavSegmentView',
+                     'LLSwitch'
    #顶部选择 
     s.subspec 'HorizontalSelector' do |hSelector|
         hSelector.source_files =  'LLKitClass/HorizontalSelector/**/*.{h,m,mm}'
@@ -80,6 +81,11 @@ s.default_subspecs = 'HorizontalSelector',
     s.subspec 'NavSegmentView' do |navSegmentView|
         navSegmentView.source_files =  'LLKitClass/NavSegmentView/**/*.{h,m,mm}'
         navSegmentView.resource = 'LLKitClass/NavSegmentView/**/*.{xib}'
+    end
+    #LLSwitch
+    s.subspec 'LLSwitch' do |llSwitch|
+        llSwitch.source_files =  'LLKitClass/LLSwitch/**/*.{h,m,mm}'
+        llSwitch.resource = 'LLKitClass/LLSwitch/**/*.{xib}'
     end
 
     # 控制页面返回 顶部状态栏等
