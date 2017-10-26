@@ -1,15 +1,16 @@
 Pod::Spec.new do |s|
 s.name         = "LLKit"
 s.version      = "1.0.0"
-s.summary      = "a collection of HePai utilities and categories"
+s.summary      = "常用的方法 控件 方便使用"
 s.homepage     = "https://github.com/LiGuanWen/LLKit"
 s.license      = "MIT"
+s.license      = { :type => "MIT", :file => "LICENSE" }
 s.author       = { "LiGuanWen" => "diqidaimu@qq.com" }
 s.platform     = :ios, "8.0"
-s.source       = { :git => 'https://github.com/LiGuanWen/LLKit.git', :branch => '1.0.0'}
+s.source       = { :git => 'https://github.com/LiGuanWen/LLKit.git', :tag => s.version}
 s.requires_arc = true
 s.description = %{
-   This is a Amazing Project!!!
+   This is a Good Project!!!
 }
 
 s.default_subspecs = 'HorizontalSelector', 

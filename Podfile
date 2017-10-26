@@ -1,6 +1,7 @@
 platform :ios, '8.0'
-
+inhibit_all_warnings!
 target 'LLKitDemo' do
+    
     pod 'LLKit', :path => '.'
     pod 'LLNetworking', :git => 'https://github.com/LiGuanWen/LLNetworking.git', :branch => '1.0.0'
     pod 'CYLTabBarController'

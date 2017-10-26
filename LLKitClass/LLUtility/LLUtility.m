@@ -134,8 +134,8 @@ UIViewController * VisibleViewController(){
     NSCalendarUnit unit = kCFCalendarUnitYear|kCFCalendarUnitMonth|kCFCalendarUnitDay;
     NSDateComponents *components = [calendar components:unit fromDate:today];
     NSString *year = [NSString stringWithFormat:@"%ld", (long)[components year]];
-    NSString *month = [NSString stringWithFormat:@"ld", (long)[components month]];
-    NSString *day = [NSString stringWithFormat:@"ld", (long)[components day]];
+    NSString *month = [NSString stringWithFormat:@"%ld", (long)[components month]];
+    NSString *day = [NSString stringWithFormat:@"%ld", (long)[components day]];
     NSMutableDictionary *todayDic = [[NSMutableDictionary alloc] init];
     [todayDic setObject:year forKey:@"year"];
     [todayDic setObject:month forKey:@"month"];
@@ -186,15 +186,6 @@ UIViewController * VisibleViewController(){
     NSString *nicknameRegex = @"^[\u4e00-\u9fa5]{4,8}$";
     NSPredicate *passWordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",nicknameRegex];
     return [passWordPredicate evaluateWithObject:nickname];
-}
-//身份证号
-+ (BOOL) justIdentityCard: (NSString *)identityCard{
-    BOOL flag;
-    if (identityCard.length  0) {
-        return YES;
-    }
-}
-return NO;
 }
 
 @end
