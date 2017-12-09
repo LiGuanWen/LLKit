@@ -10,7 +10,39 @@
 #import "LLUtility.h"
 
 @implementation LLUtility
+/**
+ 获取当前的NSDate
+ */
++ (NSDate *)getNowDateWithFormString:(NSString *)formString{
+    if (formString) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];// ------实例化一个NSDateFormatter对象
+        [formatter setDateFormat:formString]; //这里的格式必须和String格式一致
+        NSString *dateTime = [formatter stringFromDate:[NSDate date]];
+        NSDate *date = [formatter dateFromString:dateTime];
+        return date;
+    }else{
+        return nil;
+    }
+}
 
+/**
+ 比较两个时间段的早晚  两个时间比较大小 time1 和time2 的格式必须为 “YYYY-MM-dd HH:mm:ss”
+ 如果  time1 > time2 =>NSOrderedDescending
+ time1 < time2 =>NSOrderedAscending
+ time1 == time2 =>NSOrderedSame
+ */
++ (NSComparisonResult)compareTime1:(NSString *)time1 time2:(NSString *)time2{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];// ------实例化一个NSDateFormatter对象
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"]; //这里的格式必须和String格式一致
+    NSDate *date1 = [formatter dateFromString:time1];
+    NSDate *date2 =[formatter dateFromString:time2];
+    NSComparisonResult result =[date1 compare:date2];
+    return result;
+}
+
+/**
+ 获取当前的viewcontroller
+ */
 UIViewController * VisibleViewController(){
     UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
     if ([tab isKindOfClass:[UITabBarController class]])
