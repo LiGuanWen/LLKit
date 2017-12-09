@@ -106,6 +106,31 @@ UIViewController * VisibleViewController(){
     [VisibleViewController() presentViewController:alert animated:YES completion:nil];
 }
 
+/**
+ 提示AlerView
+ 
+ @param currVC 当前的VC
+ @param title 标题
+ @param message 消息
+ @param leftButtomTitle 左边按钮标题
+ @param rightButtonTitle 右边按钮标题
+ @param leftButtonBlock 右边按钮事件回调
+ @param rightButtonBlock 右边按钮事件回调
+ */
++ (void)showAlertWithCurrVC:(UIViewController *)currVC title:(NSString *)title message:(NSString *)message leftButtonTitle:(NSString *)leftButtomTitle rightButtonTitle:(NSString *)rightButtonTitle leftButtonBlock:(void (^)(UIAlertAction *  action))leftButtonBlock rightButtonBlock:(void (^)(UIAlertAction *  action))rightButtonBlock{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title?:@"" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+    if (leftButtomTitle) {
+        UIAlertAction *leftButton = [UIAlertAction actionWithTitle:leftButtomTitle style:UIAlertActionStyleDefault handler:leftButtonBlock] ;
+        [alert addAction:leftButton];
+    }
+    
+    if (rightButtonTitle) {
+        UIAlertAction *rightButton = [UIAlertAction actionWithTitle:rightButtonTitle style:UIAlertActionStyleDefault handler:rightButtonBlock];
+        [alert addAction:rightButton];
+    }
+    [currVC presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark -- 数组排序方法（升序）
 + (NSArray *)arraySortASC:(NSArray *)array{
 //    NSArray *array = @[@(3),@(4),@(2),@(1)];

@@ -46,6 +46,19 @@ UIViewController * VisibleViewController();
  @param rightButtonBlock 右边按钮事件回调
  */
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message leftButtonTitle:(NSString *)leftButtomTitle rightButtonTitle:(NSString *)rightButtonTitle leftButtonBlock:(void (^)(UIAlertAction *  action))leftButtonBlock rightButtonBlock:(void (^)(UIAlertAction *  action))rightButtonBlock;
+
+/**
+ 提示AlerView
+ 
+ @param currVC 当前的VC
+ @param title 标题
+ @param message 消息
+ @param leftButtomTitle 左边按钮标题
+ @param rightButtonTitle 右边按钮标题
+ @param leftButtonBlock 右边按钮事件回调
+ @param rightButtonBlock 右边按钮事件回调
+ */
++ (void)showAlertWithCurrVC:(UIViewController *)currVC title:(NSString *)title message:(NSString *)message leftButtonTitle:(NSString *)leftButtomTitle rightButtonTitle:(NSString *)rightButtonTitle leftButtonBlock:(void (^)(UIAlertAction *  action))leftButtonBlock rightButtonBlock:(void (^)(UIAlertAction *  action))rightButtonBlock;
 #pragma mark -- 数组排序方法（升序）
 + (NSArray *)arraySortASC:(NSArray *)array;
 
