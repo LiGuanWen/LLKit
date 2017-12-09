@@ -41,6 +41,59 @@
 }
 
 /**
+ date1 和 date2 时间差比较
+ // 伪代码
+ 年差额 = dateCom.year,
+ 月差额 = dateCom.month,
+ 日差额 = dateCom.day,
+ 小时差额 = dateCom.hour,
+ 分钟差额 = dateCom.minute,
+ 秒差额 = dateCom.second 
+ */
++ (NSDateComponents *)componentsDate1:(NSDate *)date1 data2:(NSDate *)date2{
+    // 当前日历
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    // 需要对比的时间数据
+    NSCalendarUnit unit = NSCalendarUnitYear | NSCalendarUnitMonth
+    | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    // 对比时间差
+    NSDateComponents *dateCom = [calendar components:unit fromDate:date1 toDate:date2 options:0];
+    return dateCom;
+}
+//NSDate转NSString
++ (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format{
+    //获取系统当前时间
+    NSDate *currentDate = [NSDate date];
+    //用于格式化NSDate对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设置格式：zzz表示时区
+    if (format.length < 1) {
+        format = @"yyyy-MM-dd HH:mm:ss zzz";
+    }
+    [dateFormatter setDateFormat:format];
+    //NSDate转NSString
+    NSString *currentDateString = [dateFormatter stringFromDate:currentDate];
+    //输出currentDateString
+    NSLog(@"%@",currentDateString);
+    return currentDateString;
+}
+
+//NSString转NSDate
++ (NSDate *)dateFromString:(NSString *)string format:(NSString *)format{
+    //需要转换的字符串
+    NSString *dateString = @"2015-06-26 08:08:08";
+    //设置转换格式
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    if (format.length < 1) {
+        format = @"yyyy-MM-dd HH:mm:ss";
+    }
+    [formatter setDateFormat:format];
+    //NSString转NSDate
+    NSDate *date=[formatter dateFromString:dateString];
+    return date;
+}
+
+/**
  获取当前的viewcontroller
  */
 UIViewController * VisibleViewController(){

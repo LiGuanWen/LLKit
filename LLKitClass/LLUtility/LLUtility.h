@@ -22,6 +22,22 @@
  */
 + (NSComparisonResult)compareTime1:(NSString *)time1 time2:(NSString *)time2;
 /**
+ date1 和 date2 时间差比较
+ // 伪代码
+ 年差额 = dateCom.year,
+ 月差额 = dateCom.month,
+ 日差额 = dateCom.day,
+ 小时差额 = dateCom.hour,
+ 分钟差额 = dateCom.minute,
+ 秒差额 = dateCom.second
+ */
++ (NSDateComponents *)componentsDate1:(NSDate *)date1 data2:(NSDate *)date2;
+//NSDate转NSString
++ (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format;
+
+//NSString转NSDate
++ (NSDate *)dateFromString:(NSString *)string format:(NSString *)format;
+/**
  获取当前的viewcontroller
  */
 UIViewController * VisibleViewController();
