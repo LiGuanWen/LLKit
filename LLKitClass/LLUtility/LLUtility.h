@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface LLUtility : NSObject
+
+/**
+ 对数组乱序
+ */
++ (NSArray *)randamArry:(NSArray *)arry;
 /**
  获取当前的NSDate
  */
