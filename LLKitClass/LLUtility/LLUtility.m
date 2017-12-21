@@ -75,8 +75,6 @@
 }
 //NSDate转NSString
 + (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format{
-    //获取系统当前时间
-    NSDate *currentDate = [NSDate date];
     //用于格式化NSDate对象
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     //设置格式：zzz表示时区
@@ -85,7 +83,7 @@
     }
     [dateFormatter setDateFormat:format];
     //NSDate转NSString
-    NSString *currentDateString = [dateFormatter stringFromDate:currentDate];
+    NSString *currentDateString = [dateFormatter stringFromDate:date];
     //输出currentDateString
     NSLog(@"%@",currentDateString);
     return currentDateString;
@@ -94,7 +92,7 @@
 //NSString转NSDate
 + (NSDate *)dateFromString:(NSString *)string format:(NSString *)format{
     //需要转换的字符串
-    NSString *dateString = @"2015-06-26 08:08:08";
+    NSString *dateString = string;
     //设置转换格式
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
     if (format.length < 1) {
