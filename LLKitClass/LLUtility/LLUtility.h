@@ -11,6 +11,22 @@
 @interface LLUtility : NSObject
 
 /**
+ 创建文件夹
+ 
+ @param fileName 文件夹名称
+ @return 是否成功
+ */
++ (BOOL)createFolderIfNotExistWithfolderName:(NSString *)folderName;
+/**
+ 删除视频文件夹
+ */
++ (void)deleteFolderWithfolderName:(NSString *)folderName;
+/**
+ 获取摸个文件夹下的所有文件
+ @param filePath 路径
+ */
++ (NSArray *)getAllFileInFolderWithFilePath:(NSString *)filePath;
+/**
  对数组乱序
  */
 + (NSArray *)randamArry:(NSArray *)arry;

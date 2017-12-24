@@ -10,6 +10,64 @@
 #import "LLUtility.h"
 
 @implementation LLUtility
+
+
+/**
+ 创建文件夹
+
+ @param fileName 文件夹名称
+ @return 是否成功
+ */
++ (BOOL)createFolderIfNotExistWithfolderName:(NSString *)folderName{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [paths objectAtIndex:0];
+    
+    NSString *folderPath = [path stringByAppendingPathComponent:folderName];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDir = FALSE;
+    BOOL isDirExist = [fileManager fileExistsAtPath:folderPath isDirectory:&isDir];
+    
+    if(!(isDirExist && isDir)){
+        BOOL bCreateDir = [fileManager createDirectoryAtPath:folderPath withIntermediateDirectories:YES attributes:nil error:nil];
+        if(!bCreateDir){
+            NSLog(@"创建图片文件夹失败");
+            return NO;
+        }
+        return YES;
+    }
+    return YES;
+}
+
+/**
+ 删除视频文件夹
+ */
++ (void)deleteFolderWithfolderName:(NSString *)folderName{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [paths objectAtIndex:0];
+    
+    NSString *folderPath = [path stringByAppendingPathComponent:folderName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:folderPath error:nil];
+}
+
+
+/**
+ 获取摸个文件夹下的所有文件
+ @param filePath 路径
+ */
++ (NSArray *)getAllFileInFolderWithFilePath:(NSString *)filePath{
+    //step6. 获取沙盒里所有文件
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    NSError *error = nil;
+    NSArray *fileList = [[NSArray alloc] init];
+    //fileList便是包含有该文件夹下所有文件的文件名及文件夹名的数组
+    fileList = [fileManager contentsOfDirectoryAtPath:filePath error:&error];
+    return fileList;
+}
+
+
 // 对数组乱序
 + (NSArray *)randamArry:(NSArray *)arry{
     arry = [arry sortedArrayUsingComparator:^NSComparisonResult(NSString *str1, NSString *str2) {
