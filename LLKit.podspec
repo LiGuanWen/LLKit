@@ -75,7 +75,7 @@ s.default_subspecs = 'HorizontalSelector',
     #刷新
     s.subspec 'LLMJRefreshControl' do |mjRefresh|
         mjRefresh.source_files =  'LLKitClass/LLMJRefreshControl/**/*.{h,m,mm}'
-         mjRefresh.dependency 'MJRefresh'
+        mjRefresh.dependency 'MJRefresh'
     end
     #顶部选择 
     s.subspec 'NavSegmentView' do |navSegmentView|
@@ -88,12 +88,14 @@ s.default_subspecs = 'HorizontalSelector',
         llSwitch.resource = 'LLKitClass/LLSwitch/**/*.{xib}'
     end
 
-    # 控制页面返回 顶部状态栏等
-    s.dependency "FDFullscreenPopGesture"
-    # s.dependency 'CYLTabBarController'
-    # s.dependency 'Masonry'
-    # s.dependency 'TYPagerController'
-    # s.dependency 'DZNEmptyDataSet'
-    # s.dependency 'SDCycleScrollView', '~> 1.66'
+   
+    s.dependency "FDFullscreenPopGesture"     # 控制页面返回 顶部状态栏等
+    # s.dependency 'CYLTabBarController'   #tabbar
+    # s.dependency 'Masonry'      #手写约束
+    # s.dependency 'TYPagerController'  #多页列表
+    # s.dependency 'DZNEmptyDataSet'   #空白页
+    # s.dependency 'SDCycleScrollView', '~> 1.66'  #滚动广告brand
+  
+    # s.dependency 'HHTransition'   #转场动画
 end
 

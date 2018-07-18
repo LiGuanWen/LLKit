@@ -64,16 +64,7 @@ UIViewController * VisibleViewController();
 + (BOOL) justPassword:(NSString *)passWord;
 //昵称
 + (BOOL) justNickname:(NSString *)nickname;
-//身份证号
-+ (BOOL) justIdentityCard: (NSString *)identityCard;
-//汉字
-+ (BOOL) justChineseCharacter:(NSString *)Chinese;
-//网址Url
-+ (BOOL) justURlSite:(NSString *)urlSite;
-//IP
-+ (BOOL) justIP:(NSString *)ip;
-//匹配流量ID
-+ (BOOL) justFromID:(NSString *)fid;
+
 
 @end
 

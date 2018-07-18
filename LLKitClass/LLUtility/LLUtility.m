@@ -187,15 +187,6 @@ UIViewController * VisibleViewController(){
     NSPredicate *passWordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",nicknameRegex];
     return [passWordPredicate evaluateWithObject:nickname];
 }
-//身份证号
-+ (BOOL) justIdentityCard: (NSString *)identityCard{
-    BOOL flag;
-    if (identityCard.length  0) {
-        return YES;
-    }
-}
-return NO;
-}
 
 @end
 
