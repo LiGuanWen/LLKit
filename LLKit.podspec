@@ -21,7 +21,7 @@ s.default_subspecs = 'HorizontalSelector',
                      'LLWeb',
                      'LLWebp',
                      'LLMJRefreshControl',
-                     'NavSegmentView',
+                     'LLNavSegmentView',
                      'LLSwitch'
    #顶部选择 
     s.subspec 'HorizontalSelector' do |hSelector|
@@ -78,9 +78,9 @@ s.default_subspecs = 'HorizontalSelector',
         mjRefresh.dependency 'MJRefresh'
     end
     #顶部选择 
-    s.subspec 'NavSegmentView' do |navSegmentView|
-        navSegmentView.source_files =  'LLKitClass/NavSegmentView/**/*.{h,m,mm}'
-        navSegmentView.resource = 'LLKitClass/NavSegmentView/**/*.{xib}'
+    s.subspec 'LLNavSegmentView' do |navSegmentView|
+        navSegmentView.source_files =  'LLKitClass/LLNavSegmentView/**/*.{h,m,mm}'
+        navSegmentView.resource = 'LLKitClass/LLNavSegmentView/**/*.{xib}'
     end
     #LLSwitch
     s.subspec 'LLSwitch' do |llSwitch|
