@@ -90,10 +90,10 @@ s.default_subspecs = 'HorizontalSelector',
 
     # 控制页面返回 顶部状态栏等
     s.dependency "FDFullscreenPopGesture"
-    s.dependency 'CYLTabBarController'
-    s.dependency 'Masonry'
-    s.dependency 'TYPagerController'
-    s.dependency 'DZNEmptyDataSet'
-    s.dependency 'SDCycleScrollView', '~> 1.66'
+    # s.dependency 'CYLTabBarController'
+    # s.dependency 'Masonry'
+    # s.dependency 'TYPagerController'
+    # s.dependency 'DZNEmptyDataSet'
+    # s.dependency 'SDCycleScrollView', '~> 1.66'
 end
 
