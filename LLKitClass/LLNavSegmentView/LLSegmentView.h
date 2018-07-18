@@ -1,5 +1,5 @@
 //
-//  SegmentView.h
+//  LLSegmentView.h
 //  News
 //
 //  Created by Lilong on 2016/12/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SegmentView : UIView
+@interface LLSegmentView : UIView
 
 @property (nonatomic, copy) void (^handle)(UIButton *button,NSInteger index);
 @property (nonatomic, assign) NSInteger currentIndex;
@@ -16,7 +16,7 @@
  构造方法
  
  @param titles 标题组数
- @return HEPSegmentView实例
+ @return LLSegmentView实例
  */
 - (instancetype)initWithSegmentTitles:(NSArray *)titles;
 

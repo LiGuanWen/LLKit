@@ -1,5 +1,5 @@
 //
-//  NavSegmentView.h
+//  LLNavSegmentView.h
 //  News
 //
 //  Created by Lilong on 2016/12/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NavSegmentView : UIView
+@interface LLNavSegmentView : UIView
 @property (assign, nonatomic) NSInteger itemWidth;
 @property (assign, nonatomic) NSInteger itemHeight;
 @property (copy, nonatomic) NSArray * items;

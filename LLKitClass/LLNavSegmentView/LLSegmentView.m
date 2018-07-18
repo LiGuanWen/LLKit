@@ -1,22 +1,22 @@
 //
-//  SegmentView.m
+//  LLSegmentView.m
 //  News
 //
 //  Created by Lilong on 2016/12/13.
 //  Copyright © 2016年 李龙. All rights reserved.
 //
 
-#import "SegmentView.h"
+#import "LLSegmentView.h"
 #import "YYKit.h"
 
 static NSInteger const kPointViewTag = 2000;
-@interface SegmentView ()
+@interface LLSegmentView ()
 
 @property (nonatomic, strong) NSMutableArray *btnsArray;
 @property (nonatomic, strong) UIView *lineView;
 @end
 
-@implementation SegmentView
+@implementation LLSegmentView
 
 
 - (instancetype)initWithSegmentTitles:(NSArray *)titles {

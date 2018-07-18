@@ -1,15 +1,15 @@
 //
-//  NavSegmentView.m
+//  LLNavSegmentView.m
 //  News
 //
 //  Created by Lilong on 2016/12/13.
 //  Copyright © 2016年 李龙. All rights reserved.
 //
 
-#import "NavSegmentView.h"
+#import "LLNavSegmentView.h"
 #import "YYKit.h"
 
-@interface NavSegmentView ()
+@interface LLNavSegmentView ()
 
 /**
  按钮数组
@@ -24,7 +24,7 @@
 @end
 
 
-@implementation NavSegmentView
+@implementation LLNavSegmentView
 
 
 - (instancetype)initWithItems:(NSArray *) items
@@ -130,7 +130,7 @@
     {
         _triangle = [[UIImageView alloc] init];
         _triangle.size = CGSizeMake(10, 5);
-        _triangle.image = [UIImage imageNamed:@"NavSegmentViewImage"];
+        _triangle.image = [UIImage imageNamed:@"LLNavSegmentViewImage"];
     }
     return _triangle;
 }
