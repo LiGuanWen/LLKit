@@ -97,5 +97,11 @@ s.default_subspecs = 'HorizontalSelector',
     # s.dependency 'SDCycleScrollView', '~> 1.66'  #滚动广告brand
   
     # s.dependency 'HHTransition'   #转场动画
+
+
+# pod 'HJTabViewController', '~> 1.0'   #防网易页面 
+
+#https://codeload.github.com/panghaijiao/HJTabViewController/zip/master
+
 end
 
