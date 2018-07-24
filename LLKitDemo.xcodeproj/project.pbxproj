@@ -178,7 +178,6 @@
 				FD0808BD1E93BFC600C2B0F8 /* Sources */,
 				FD0808BE1E93BFC600C2B0F8 /* Frameworks */,
 				FD0808BF1E93BFC600C2B0F8 /* Resources */,
-				E8C8C433B60EA4E66FF7E4DC /* [CP] Embed Pods Frameworks */,
 				91251F3FCE4B0A51783CDF40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -336,26 +335,16 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HorizontalSelector.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HorizontalSelectorCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/emptyStar.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Star.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WebViewJavascriptBridge.js.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LLKitDemo/Pods-LLKitDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E8C8C433B60EA4E66FF7E4DC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LLKitDemo/Pods-LLKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
