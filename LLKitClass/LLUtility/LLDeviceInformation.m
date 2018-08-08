@@ -197,7 +197,7 @@
 }
 
 /// 获取电池当前的状态，共有4种状态
-+ (NSString *) getBatteryState {
++ (NSString *)getBatteryState {
     UIDevice *device = [UIDevice currentDevice];
     if (device.batteryState == UIDeviceBatteryStateUnknown) {
         return @"UnKnow";
