@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UICollectionView+RegisterNib.h"
+#import "UITableView+RegisterNib.h"
+#import "LLDeviceInformation.h"
 
 @interface LLUtility : NSObject
 
-UIViewController * VisibleViewController();
+UIViewController * VisibleViewController(void); //与currViewController功能一样
+UIViewController * currViewController(void);   //与VisibleViewController功能一样
+//获取当前屏幕显示的viewcontroller
++ (UIViewController *)getCurrentVC;
++ (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC;
 
 /**
  加载 Xib 文件
@@ -48,8 +55,6 @@ UIViewController * VisibleViewController();
 +(CGFloat)heightOfString:(NSString *)string font:(UIFont*)font width:(CGFloat)width;
 //获取今天的日期：年月日
 +(NSDictionary *)getTodayDate;
-//自定义 正则匹配
-+ (BOOL) justWithInitRegularly:(NSString *)Regularly Str:(NSString *)str;
 //邮箱
 + (BOOL) justEmail:(NSString *)email;
 //手机号码验证
@@ -68,22 +73,4 @@ UIViewController * VisibleViewController();
 
 @end
 
-#pragma mark - UITableView category
 
-@interface UITableView (RegisterNib)
-
-- (void)registerCellNibWithNibName:(NSString *) nibName;
-- (void)registerCellClassWithClassName:(NSString *) className;
-- (void)multiRegisterCellNibsWithNibNames:(NSArray *) nibNames;
-
-@end
-
-#pragma mark - UICollectionView category
-
-@interface UICollectionView (RegisterNib)
-
-- (void)registerCellNibWithNibName:(NSString *) nibName;
-- (void)registerCellClassWithClassName:(NSString *) className;
-- (void)multiRegisterCellNibsWithNibNames:(NSArray *) nibNames;
-
-@end
