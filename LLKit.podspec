@@ -12,7 +12,8 @@ s.description = %{
    This is a Amazing Project!!!
 }
 
-s.default_subspecs = 'HorizontalSelector', 
+s.default_subspecs = 'TPKeyboardAvoiding',
+                     'HorizontalSelector',
                      'LLEvaluationStar',
                      'LLExpand',
                      'LLHud',
@@ -23,7 +24,12 @@ s.default_subspecs = 'HorizontalSelector',
                      'LLMJRefreshControl',
                      'LLNavSegmentView',
                      'LLSwitch'
-   #顶部选择 
+     #键盘
+    s.subspec 'TPKeyboardAvoiding' do |keyboardAvoiding|
+         keyboardAvoiding.source_files =  'LLKitClass/TPKeyboardAvoiding/**/*.{h,m,mm}'
+         keyboardAvoiding.resource = 'LLKitClass/TPKeyboardAvoiding/**/*.{xib}'
+     end
+   #顶部选择
     s.subspec 'HorizontalSelector' do |hSelector|
         hSelector.source_files =  'LLKitClass/HorizontalSelector/**/*.{h,m,mm}'
         hSelector.resource = 'LLKitClass/HorizontalSelector/**/*.{xib}'
