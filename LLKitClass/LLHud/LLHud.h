@@ -14,6 +14,8 @@
 //显示HUD提示
 +(MBProgressHUD *)showHUDInView:(UIView *)view title:(NSString *)title;
 
++(MBProgressHUD *)showHUDInView:(UIView *)view title:(NSString *)title imageArr:(NSArray *)imageArr;
+
 //关闭HUD提示
 +(void)hideHUDInView:(UIView *)view;
 
