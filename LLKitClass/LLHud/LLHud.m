@@ -35,16 +35,49 @@
     imageView.frame = CGRectMake(0, 0, 50, 50);
     NSMutableArray *imageList = [[NSMutableArray alloc] initWithCapacity:24];
     for (NSInteger i = 1; i <= 12; i++) {
-        UIImage *frameImage = [UIImage imageNamed:[NSString stringWithFormat:@"%lu",(unsigned long)i]];
+        UIImage *frameImage = [UIImage imageNamed:[NSString stringWithFormat:@"LLHud_loading_%lu",(unsigned long)i]];
         if (frameImage) {
             [imageList addObject:frameImage];
         }
     }
-    [imageView setAnimationImages:imageList];
-    [imageView setAnimationDuration:0.6];
-    [imageView startAnimating];
+    if (imageList.count > 0) {
+        [imageView setAnimationImages:imageList];
+        [imageView setAnimationDuration:0.6];
+        [imageView startAnimating];
+        HUDInView.customView = imageView;
+    }
+    return HUDInView;
+}
+
++ (MBProgressHUD *)showHUDInView:(UIView *)view title:(NSString *)title imageArr:(NSArray *)imageArr{
+    if (view == nil) {
+        return nil;
+    }
+    // 禁止TableView滚动
+    if ([view respondsToSelector:@selector(setScrollEnabled:)]) {
+        [(UIScrollView*)view setScrollEnabled:NO];
+    }
+    MBProgressHUD *HUDInView = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    HUDInView.center=CGPointMake(view.center.x, view.center.y - view.frame.origin.y);
     
-    HUDInView.customView = imageView;
+    HUDInView.removeFromSuperViewOnHide = YES;
+    HUDInView.labelText = title;
+    HUDInView.square = YES;
+    HUDInView.mode = MBProgressHUDModeCustomView;
+    HUDInView.layer.cornerRadius = 4.0f;
+    HUDInView.layer.masksToBounds = YES;
+    HUDInView.alpha=1.0;
+    HUDInView.yOffset=5;
+    HUDInView.labelFont=[UIFont boldSystemFontOfSize:14.0f];
+    HUDInView.detailsLabelFont = [UIFont boldSystemFontOfSize:15.0f];
+    if (imageArr) {
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.frame = CGRectMake(0, 0, 50, 50);
+        [imageView setAnimationImages:imageArr];
+        [imageView setAnimationDuration:0.6];
+        [imageView startAnimating];
+        HUDInView.customView = imageView;
+    }
     return HUDInView;
 }
 

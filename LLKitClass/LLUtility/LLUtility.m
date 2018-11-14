@@ -11,7 +11,7 @@
 
 @implementation LLUtility
 
-UIViewController * VisibleViewController(){
+UIViewController * VisibleViewController(void){
     UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
     if ([tab isKindOfClass:[UITabBarController class]])
     {
@@ -28,9 +28,64 @@ UIViewController * VisibleViewController(){
         {
             return vc;
         }
+    }else{
+        return [LLUtility getCurrentVC];
     }
     return nil;
 }
+
+UIViewController * currViewController(void)
+{
+    UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+    if ([tab isKindOfClass:[UITabBarController class]])
+    {
+        UIViewController *vc = ([(UINavigationController *)[[tab viewControllers] objectAtIndex:tab.selectedIndex] visibleViewController]);
+        if (vc.presentedViewController)
+        {
+            if (vc.presentedViewController.presentedViewController)
+            {
+                return vc.presentedViewController.presentedViewController;
+            }
+            return vc.presentedViewController;
+        }
+        else
+        {
+            return vc;
+        }
+    }else{
+        return [LLUtility getCurrentVC];
+    }
+    return nil;
+}
+
+//获取当前屏幕显示的viewcontroller
++ (UIViewController *)getCurrentVC{
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
+    return currentVC;
+}
+
++ (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC{
+    UIViewController *currentVC;
+    if ([rootVC presentedViewController]) {
+        // 视图是被presented出来的
+        rootVC = [rootVC presentedViewController];
+    }
+    if ([rootVC isKindOfClass:[UITabBarController class]]) {
+        // 根视图为UITabBarController
+        currentVC = [self getCurrentVCFrom:[(UITabBarController *)rootVC selectedViewController]];
+        
+    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
+        // 根视图为UINavigationController
+        currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVC visibleViewController]];
+        
+    } else {
+        // 根视图为非导航类
+        currentVC = rootVC;
+    }
+    return currentVC;
+}
+
 
 /**
  加载 Xib 文件
@@ -134,8 +189,8 @@ UIViewController * VisibleViewController(){
     NSCalendarUnit unit = kCFCalendarUnitYear|kCFCalendarUnitMonth|kCFCalendarUnitDay;
     NSDateComponents *components = [calendar components:unit fromDate:today];
     NSString *year = [NSString stringWithFormat:@"%ld", (long)[components year]];
-    NSString *month = [NSString stringWithFormat:@"ld", (long)[components month]];
-    NSString *day = [NSString stringWithFormat:@"ld", (long)[components day]];
+    NSString *month = [NSString stringWithFormat:@"%ld", (long)[components month]];
+    NSString *day = [NSString stringWithFormat:@"%ld", (long)[components day]];
     NSMutableDictionary *todayDic = [[NSMutableDictionary alloc] init];
     [todayDic setObject:year forKey:@"year"];
     [todayDic setObject:month forKey:@"month"];
@@ -149,89 +204,46 @@ UIViewController * VisibleViewController(){
     return [emailTest evaluateWithObject:email];
 }
 //手机号码验证
-+ (BOOL) justMobile:(NSString *)mobile{
++ (BOOL)justMobile:(NSString *)mobile{
     //手机号以13， 15，18 ,17开头，八个 \d 数字字符
     NSString *phoneRegex = @"^((13[0-9])|(15[^4,\\D])|(18[0,0-9])|(17[0,0-9]))\\d{8}$";
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
     return [phoneTest evaluateWithObject:mobile];
 }
 //车牌号验证
-+ (BOOL) justCarNo:(NSString *)carNo{
++ (BOOL)justCarNo:(NSString *)carNo{
     NSString *carRegex = @"^[\u4e00-\u9fa5]{1}[a-zA-Z]{1}[a-zA-Z_0-9]{4}[a-zA-Z_0-9_\u4e00-\u9fa5]$";
     NSPredicate *carTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",carRegex];
     //    NSLog(@"carTest is %@",carTest);
     return [carTest evaluateWithObject:carNo];
 }
 //车型
-+ (BOOL) justCarType:(NSString *)CarType{
++ (BOOL)justCarType:(NSString *)CarType{
     NSString *CarTypeRegex = @"^[\u4E00-\u9FFF]+$";
     NSPredicate *carTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",CarTypeRegex];
     return [carTest evaluateWithObject:CarType];
 }
 //用户名
-+ (BOOL) justUserName:(NSString *)name{
++ (BOOL)justUserName:(NSString *)name{
     NSString *userNameRegex = @"^[A-Za-z0-9]{6,20}+$";
     NSPredicate *userNamePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",userNameRegex];
     BOOL B = [userNamePredicate evaluateWithObject:name];
     return B;
 }
 //密码
-+ (BOOL) justPassword:(NSString *)passWord{
++ (BOOL)justPassword:(NSString *)passWord{
     NSString *passWordRegex = @"^[a-zA-Z0-9]{6,20}+$";
     NSPredicate *passWordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",passWordRegex];
     return [passWordPredicate evaluateWithObject:passWord];
 }
 //昵称
-+ (BOOL) justNickname:(NSString *)nickname{
++ (BOOL)justNickname:(NSString *)nickname{
     NSString *nicknameRegex = @"^[\u4e00-\u9fa5]{4,8}$";
     NSPredicate *passWordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",nicknameRegex];
     return [passWordPredicate evaluateWithObject:nickname];
 }
 
-@end
-
-
-
-
-
-#pragma mark - UITableView
-
-@implementation UITableView (RegisterNib)
-
-- (void)registerCellNibWithNibName:(NSString *)nibName{
-    [self registerNib:[UINib nibWithNibName:nibName bundle:nil] forCellReuseIdentifier:nibName];
-}
-
-- (void)registerCellClassWithClassName:(NSString *)className{
-    [self registerClass:NSClassFromString(className) forCellReuseIdentifier:className];
-}
-
-- (void)multiRegisterCellNibsWithNibNames:(NSArray *)nibNames{
-    for (NSString * nibName in nibNames){
-        [self registerCellNibWithNibName:nibName];
-    }
-}
-
-@end
-
-#pragma mark - UICollectionView
-
-@implementation UICollectionView (RegisterNib)
-
-- (void)registerCellNibWithNibName:(NSString *)nibName{
-    [self registerNib:[UINib nibWithNibName:nibName bundle:nil] forCellWithReuseIdentifier:nibName];
-}
-
-- (void)registerCellClassWithClassName:(NSString *)className{
-    [self registerClass:NSClassFromString(className) forCellWithReuseIdentifier:className];
-}
-
-- (void)multiRegisterCellNibsWithNibNames:(NSArray *)nibNames{
-    for (NSString * nibName in nibNames)
-    {
-        [self registerCellNibWithNibName:nibName];
-    }
-}
 
 
 @end
+
