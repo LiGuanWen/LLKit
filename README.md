@@ -9,4 +9,12 @@
      pod 'SDCycleScrollView', '~> 1.66'  #滚动广告brand
      pod 'HHTransition'   #转场动画
      pod 'HJTabViewController', '~> 1.0'   #防网易页面 
+     
+     pod 'YBPopupMenu'   #弹出选择框 或提示框
+     
+     pod 'FBMemoryProfiler' # 内存泄漏的自动化排查框架
 
+     pod 'KVOController'
+     
+     
+     名称  美食每刻  我型我塑 
