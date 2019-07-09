@@ -12,7 +12,7 @@ s.description = %{
    This is a Amazing Project!!!
 }
 
-s.default_subspecs = 'TPKeyboardAvoiding',
+s.default_subspecs = 'LLUIKit'
                      'HorizontalSelector',
                      'LLEvaluationStar',
                      'LLExpand',
@@ -24,16 +24,29 @@ s.default_subspecs = 'TPKeyboardAvoiding',
                      'LLMJRefreshControl',
                      'LLNavSegmentView',
                      'LLSwitch'
-     #键盘
-    s.subspec 'TPKeyboardAvoiding' do |keyboardAvoiding|
-         keyboardAvoiding.source_files =  'LLKitClass/TPKeyboardAvoiding/**/*.{h,m,mm}'
-         keyboardAvoiding.resource = 'LLKitClass/TPKeyboardAvoiding/**/*.{xib}'
-     end
+
+   # UIKit
+    s.subspec 'LLUIKit' do |uikit|
+         uikit.subspec 'Views' do |views|
+            views.source_files = 'LLKitClass/UIKit/Views/**/*.{h,m}'
+        end
+          uikit.subspec 'CollectionViewCells' do |collectionViewCells|
+            collectionViewCells.source_files = 'LLKitClass/UIKit/CollectionViewCells/**/*.{h,m}'
+        end
+          uikit.subspec 'Controllers' do |controllers|
+            controllers.source_files = 'LLKitClass/UIKit/Controllers/**/*.{h,m}'
+        end
+          uikit.subspec 'TableViewCells' do |tableViewCells|
+            tableViewCells.source_files = 'LLKitClass/UIKit/TableViewCells/**/*.{h,m}'
+        end
+        uikit.dependency 'DZNEmptyDataSet'
+
+    end
+ 
    #顶部选择
     s.subspec 'HorizontalSelector' do |hSelector|
         hSelector.source_files =  'LLKitClass/HorizontalSelector/**/*.{h,m,mm}'
         hSelector.resource = 'LLKitClass/HorizontalSelector/**/*.{xib}'
-        hSelector.dependency 'YYKit'
     end
    #五星好评
     s.subspec 'LLEvaluationStar' do |evaluationStar|
@@ -96,6 +109,10 @@ s.default_subspecs = 'TPKeyboardAvoiding',
 
    
     s.dependency "FDFullscreenPopGesture"     # 控制页面返回 顶部状态栏等
+    s.dependency "TPKeyboardAvoiding"         # 键盘输入 自动对应到哪一行（scrollview tableview collectionview）
+    s.dependency 'YYKit'                      # 常用便捷方法kit
+
+
     # s.dependency 'CYLTabBarController'   #tabbar
     # s.dependency 'Masonry'      #手写约束
     # s.dependency 'TYPagerController'  #多页列表
