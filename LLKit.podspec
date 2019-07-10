@@ -19,7 +19,6 @@ s.default_subspecs = 'LLUIKit',
                      'LLHud',
                      'LLSlidePageScrollView',
                      'LLUtility',
-                     'LLWeb',
                      'LLWebp',
                      'LLMJRefreshControl',
                      'LLNavSegmentView',
@@ -28,23 +27,23 @@ s.default_subspecs = 'LLUIKit',
    # UIKit
     s.subspec 'LLUIKit' do |uikit|
          uikit.subspec 'Views' do |views|
-            views.source_files = 'LLKitClass/UIKit/Views/**/*.{h,m}'
-            views.resource = 'LLKitClass/UIKit/Views/**/*.{xib}'
+            views.source_files = 'LLKitClass/LLUIKit/Views/**/*.{h,m}'
+            views.resource = 'LLKitClass/LLUIKit/Views/**/*.{xib}'
 
         end
           uikit.subspec 'CollectionViewCells' do |collectionViewCells|
-            collectionViewCells.source_files = 'LLKitClass/UIKit/CollectionViewCells/**/*.{h,m}'
-            collectionViewCells.resource = 'LLKitClass/UIKit/CollectionViewCells/**/*.{xib}'
+            collectionViewCells.source_files = 'LLKitClass/LLUIKit/CollectionViewCells/**/*.{h,m}'
+            collectionViewCells.resource = 'LLKitClass/LLUIKit/CollectionViewCells/**/*.{xib}'
 
         end
           uikit.subspec 'Controllers' do |controllers|
-            controllers.source_files = 'LLKitClass/UIKit/Controllers/**/*.{h,m}'
-            controllers.resource = 'LLKitClass/UIKit/Controllers/**/*.{xib}'
+            controllers.source_files = 'LLKitClass/LLUIKit/Controllers/**/*.{h,m}'
+            controllers.resource = 'LLKitClass/LLUIKit/Controllers/**/*.{xib}'
 
         end
           uikit.subspec 'TableViewCells' do |tableViewCells|
-            tableViewCells.source_files = 'LLKitClass/UIKit/TableViewCells/**/*.{h,m}'
-            tableViewCells.resource = 'LLKitClass/UIKit/TableViewCells/**/*.{xib}'
+            tableViewCells.source_files = 'LLKitClass/LLUIKit/TableViewCells/**/*.{h,m}'
+            tableViewCells.resource = 'LLKitClass/LLUIKit/TableViewCells/**/*.{xib}'
 
         end
         uikit.dependency 'DZNEmptyDataSet'
@@ -81,11 +80,6 @@ s.default_subspecs = 'LLUIKit',
     s.subspec 'LLUtility' do |utility|
         utility.source_files =  'LLKitClass/LLUtility/**/*.{h,m,mm}'
         utility.resource = 'LLKitClass/LLUtility/**/*.{xib}'
-    end
-     #web页面的访问
-    s.subspec 'LLWeb' do |web|
-        web.source_files =  'LLKitClass/LLWeb/**/*.{h,m,mm}'
-        web.resource = 'LLKitClass/LLWeb/**/*.{xib,txt}'
     end
      #显示图片 sdwebimage 扩展
     s.subspec 'LLWebp' do |webp|
