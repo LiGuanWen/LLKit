@@ -12,7 +12,7 @@ s.description = %{
    This is a Amazing Project!!!
 }
 
-s.default_subspecs = 'LLUIKit'
+s.default_subspecs = 'LLUIKit',
                      'HorizontalSelector',
                      'LLEvaluationStar',
                      'LLExpand',
@@ -29,15 +29,23 @@ s.default_subspecs = 'LLUIKit'
     s.subspec 'LLUIKit' do |uikit|
          uikit.subspec 'Views' do |views|
             views.source_files = 'LLKitClass/UIKit/Views/**/*.{h,m}'
+            views.resource = 'LLKitClass/UIKit/Views/**/*.{xib}'
+
         end
           uikit.subspec 'CollectionViewCells' do |collectionViewCells|
             collectionViewCells.source_files = 'LLKitClass/UIKit/CollectionViewCells/**/*.{h,m}'
+            collectionViewCells.resource = 'LLKitClass/UIKit/CollectionViewCells/**/*.{xib}'
+
         end
           uikit.subspec 'Controllers' do |controllers|
             controllers.source_files = 'LLKitClass/UIKit/Controllers/**/*.{h,m}'
+            controllers.resource = 'LLKitClass/UIKit/Controllers/**/*.{xib}'
+
         end
           uikit.subspec 'TableViewCells' do |tableViewCells|
             tableViewCells.source_files = 'LLKitClass/UIKit/TableViewCells/**/*.{h,m}'
+            tableViewCells.resource = 'LLKitClass/UIKit/TableViewCells/**/*.{xib}'
+
         end
         uikit.dependency 'DZNEmptyDataSet'
 
