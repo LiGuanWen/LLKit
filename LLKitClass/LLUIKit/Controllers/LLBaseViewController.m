@@ -1,17 +1,17 @@
 //
-//  QKBBaseViewController.m
-//  Pods-QuKanBase
+//  LLBaseViewController.m
+//  Pods-LLKit
 //
 //  Created by 李观文 on 2019/7/10.
 //
 
-#import "QKBBaseViewController.h"
+#import "LLBaseViewController.h"
 
-@interface QKBBaseViewController ()
+@interface LLBaseViewController ()
 
 @end
 
-@implementation QKBBaseViewController
+@implementation LLBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

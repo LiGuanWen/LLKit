@@ -331,7 +331,6 @@
 				"${PODS_ROOT}/../LLKitClass/HorizontalSelector/HorizontalSelectorCell.xib",
 				"${PODS_ROOT}/../LLKitClass/LLEvaluationStar/emptyStar.png",
 				"${PODS_ROOT}/../LLKitClass/LLEvaluationStar/Star.png",
-				"${PODS_ROOT}/../LLKitClass/LLWeb/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";

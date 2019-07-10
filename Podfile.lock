@@ -54,7 +54,6 @@ PODS:
     - LLKit/LLSwitch (= 1.0.0)
     - LLKit/LLUIKit (= 1.0.0)
     - LLKit/LLUtility (= 1.0.0)
-    - LLKit/LLWeb (= 1.0.0)
     - LLKit/LLWebp (= 1.0.0)
     - TPKeyboardAvoiding
     - YYKit
@@ -125,10 +124,6 @@ PODS:
     - FDFullscreenPopGesture
     - TPKeyboardAvoiding
     - YYKit
-  - LLKit/LLWeb (1.0.0):
-    - FDFullscreenPopGesture
-    - TPKeyboardAvoiding
-    - YYKit
   - LLKit/LLWebp (1.0.0):
     - FDFullscreenPopGesture
     - libwebp
@@ -195,7 +190,7 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
-  LLKit: b4fda62e845ed27adde0ad14cec43cae521025ab
+  LLKit: a2185546da225c3eba2dd6ad11b8eef67f24d4e3
   LLNetworking: 420fa09fcabaa8ea911f3b900e8d149781026d9a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
