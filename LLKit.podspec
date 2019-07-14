@@ -19,7 +19,6 @@ s.default_subspecs = 'LLUIKit',
                      'LLHud',
                      'LLSlidePageScrollView',
                      'LLUtility',
-                     'LLWebp',
                      'LLMJRefreshControl',
                      'LLNavSegmentView',
                      'LLSwitch'
@@ -81,18 +80,7 @@ s.default_subspecs = 'LLUIKit',
         utility.source_files =  'LLKitClass/LLUtility/**/*.{h,m,mm}'
         utility.resource = 'LLKitClass/LLUtility/**/*.{xib}'
     end
-     #显示图片 sdwebimage 扩展
-    s.subspec 'LLWebp' do |webp|
-        webp.source_files =  'LLKitClass/LLWebp/**/*.{h,m,mm}'
-        webp.xcconfig = { 
-            'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
-        }
-        webp.framework = 'ImageIO'
-        webp.dependency 'libwebp'
-        webp.dependency 'SDWebImage'
-        webp.dependency 'SDWebImage/WebP'
-        webp.dependency 'SDWebImage/GIF'
-    end
+  
     #刷新
     s.subspec 'LLMJRefreshControl' do |mjRefresh|
         mjRefresh.source_files =  'LLKitClass/LLMJRefreshControl/**/*.{h,m,mm}'
