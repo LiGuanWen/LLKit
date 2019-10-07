@@ -13,7 +13,7 @@ s.description = %{
 }
 
 s.default_subspecs = 'LLUIKit',
-                     'LLWPlusPopView'
+                     'LLWPlusPopView',
                      'HorizontalSelector',
                      'LLEvaluationStar',
                      'LLExpand',
