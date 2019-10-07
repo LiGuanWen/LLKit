@@ -15,8 +15,9 @@
 
  @param imgs 图片名字集合
  @param titles 文字集合
+ @param columnCount 一行个数  大于0
  @param selectBlock 点击的Item回调
  */
-+ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles selectBlock:(void (^)(NSInteger index))selectBlock;
++ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles columnCount:(NSInteger)columnCount selectBlock:(void (^)(NSInteger))selectBlock ;
 
 @end

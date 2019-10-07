@@ -8,9 +8,9 @@
 
 #import "LLWPlusPopView.h"
 #import "LLWCustomButton.h"
-#import "Header.h"
-
-static NSInteger const kColumnCount = 4;
+#import "UIColor+YYAdd.h"
+#import "YYCGUtilities.h"
+#import "LLUtility.h"
 static NSTimeInterval kAnimationDuration = 0.3;
 
 @interface LLWPlusPopView () <UIScrollViewDelegate>
@@ -22,14 +22,20 @@ static NSTimeInterval kAnimationDuration = 0.3;
 @property (nonatomic,   copy) void (^selectBlock)(NSInteger index);
 @property (nonatomic, strong) UIImageView *shutImgView;
 @property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) NSInteger columnCount;
 
 @end
 
 @implementation LLWPlusPopView
 
-+ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles selectBlock:(void (^)(NSInteger))selectBlock {
-    LLWPlusPopView *bg = [[LLWPlusPopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_SAFE_BOTTOM_MARGIN)];
++ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles columnCount:(NSInteger)columnCount selectBlock:(void (^)(NSInteger))selectBlock {
+    CGFloat dis = 0;
+    if ([LLUtility isIPhoneXSeries]) {
+        dis = 34;
+    }
+    LLWPlusPopView *bg = [[LLWPlusPopView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - dis)];
     bg.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.9];
+    
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:bg];
     
@@ -44,7 +50,8 @@ static NSTimeInterval kAnimationDuration = 0.3;
     bg.imageNames = imgs.copy;
     bg.titles = titles.copy;
     bg.selectBlock = [selectBlock copy];
-    
+    bg.columnCount = columnCount;
+
     [bg setupMainView];
     [bg setupItem];
     [bg setupBottom];
@@ -53,7 +60,7 @@ static NSTimeInterval kAnimationDuration = 0.3;
 - (void)setupMainView {
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.frame.size.height * 0.37, self.frame.size.width, 300)];
     scrollView.delegate = self;
-    NSInteger pages = (self.titles.count - 1) / (kColumnCount * 2) + 1;
+    NSInteger pages = (self.titles.count - 1) / (self.columnCount * 2) + 1;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * pages, 0);
     scrollView.pagingEnabled = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -64,8 +71,8 @@ static NSTimeInterval kAnimationDuration = 0.3;
     pageControl.frame = CGRectMake(self.frame.size.width / 2 - 10, self.bounds.size.height - 49 - 20 - 20, 20, 20);//指定位置大小
     pageControl.numberOfPages = pages;
     pageControl.currentPage = 0;
-    pageControl.pageIndicatorTintColor = HexColorInt32_t(c0c0c0);
-    pageControl.currentPageIndicatorTintColor = HexColorInt32_t(1fb497);
+    pageControl.pageIndicatorTintColor = [UIColor colorWithHexString:@"c0c0c0"];
+    pageControl.currentPageIndicatorTintColor = [UIColor colorWithHexString:@"1fb497"];
     self.pageControl = pageControl;
     [self addSubview:pageControl];
 }
@@ -73,17 +80,17 @@ static NSTimeInterval kAnimationDuration = 0.3;
 - (void)setupItem {
     CGFloat vMargin = 15;
     CGFloat vSpacing = 20;
-    CGFloat itemWidth = self.scrollView.frame.size.width / kColumnCount;
+    CGFloat itemWidth = self.scrollView.frame.size.width / self.columnCount;
     CGFloat itemHeight = (265 - 2 * vMargin - vSpacing) * 0.5;
     NSInteger row = 0;
     NSInteger loc = 0;
     CGFloat x = 0;
     CGFloat y = 0;
     for (NSInteger i = 0; i < self.imageNames.count; i ++) {
-        row = i / kColumnCount % 2; // % 2  为了翻页
-        loc = i % kColumnCount ;
-        x = itemWidth * loc + (i / (kColumnCount * 2)) * self.scrollView.frame.size.width;
-        if (i / (kColumnCount * 2) > 0) {
+        row = i / self.columnCount % 2; // % 2  为了翻页
+        loc = i % self.columnCount ;
+        x = itemWidth * loc + (i / (self.columnCount * 2)) * self.scrollView.frame.size.width;
+        if (i / (self.columnCount * 2) > 0) {
             y = vMargin + (itemWidth + vSpacing) * row;
         } else {
             y = self.scrollView.frame.size.height + (itemHeight + vSpacing) * row;
@@ -91,7 +98,7 @@ static NSTimeInterval kAnimationDuration = 0.3;
         LLWCustomButton *button = [[LLWCustomButton alloc] initWithFrame:CGRectMake(x, y, itemWidth, itemHeight)];
         button.tag = 1000 + i;
         [button setTitle:self.titles[i] forState:UIControlStateNormal];
-        [button setTitleColor:HexColorInt32_t(666666) forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithHexString:@"666666"] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:16];
         button.titleLabel.textAlignment = NSTextAlignmentCenter;
         [button setImage:[UIImage imageNamed:self.imageNames[i]] forState:UIControlStateNormal];
@@ -99,7 +106,7 @@ static NSTimeInterval kAnimationDuration = 0.3;
         [button addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:button];
         
-        if (i < kColumnCount * 2) {
+        if (i < self.columnCount * 2) {
             [UIView animateWithDuration:kAnimationDuration
                                   delay:i * 0.03
                  usingSpringWithDamping:0.7
@@ -151,14 +158,14 @@ static NSTimeInterval kAnimationDuration = 0.3;
     
     CGFloat dy = CGRectGetHeight(self.frame) + 70;
     NSInteger count = 0;
-    if (self.imageNames.count / (kColumnCount * 2) > self.currentPage) {
-        count = kColumnCount * 2; // 当前要具有 kColumnCount * 2个按钮;
+    if (self.imageNames.count / (self.columnCount * 2) > self.currentPage) {
+        count = self.columnCount * 2; // 当前要具有 self.columnCount * 2个按钮;
     } else {
-        count = self.imageNames.count % (kColumnCount * 2); // 最后一页
+        count = self.imageNames.count % (self.columnCount * 2); // 最后一页
     }
 
     for (int i = 0; i < count; i ++) {
-        LLWCustomButton *button = [self viewWithTag:1000 + self.currentPage * (kColumnCount * 2)  + i];
+        LLWCustomButton *button = [self viewWithTag:1000 + self.currentPage * (self.columnCount * 2)  + i];
         CGFloat width = CGRectGetWidth(button.frame);
         CGFloat buttonX = button.frame.origin.x;//0.3-i*0.03
         [UIView animateWithDuration:kAnimationDuration
