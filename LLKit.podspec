@@ -13,6 +13,7 @@ s.description = %{
 }
 
 s.default_subspecs = 'LLUIKit',
+                     'LLWPlusPopView'
                      'HorizontalSelector',
                      'LLEvaluationStar',
                      'LLExpand',
@@ -50,9 +51,14 @@ s.default_subspecs = 'LLUIKit',
     end
  
    #顶部选择
+    s.subspec 'LLWPlusPopView' do |wPlusPopView|
+        wPlusPopView.source_files =  'LLKitClass/LLWPlusPopView/**/*.{h,m,mm}'
+        wPlusPopView.resource = 'LLKitClass/LLWPlusPopView/**/*.{xib}'
+    end
+  #仿微博“+”号发布弹出动画视图
     s.subspec 'HorizontalSelector' do |hSelector|
-        hSelector.source_files =  'LLKitClass/HorizontalSelector/**/*.{h,m,mm}'
-        hSelector.resource = 'LLKitClass/HorizontalSelector/**/*.{xib}'
+      hSelector.source_files =  'LLKitClass/HorizontalSelector/**/*.{h,m,mm}'
+      hSelector.resource = 'LLKitClass/HorizontalSelector/**/*.{xib}'
     end
    #五星好评
     s.subspec 'LLEvaluationStar' do |evaluationStar|
