@@ -18,7 +18,7 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "UICollectionViewLeftAlignedLayout.h"
+#import "LLUICollectionViewLeftAlignedLayout.h"
 
 @interface UICollectionViewLayoutAttributes (LeftAligned)
 
@@ -39,7 +39,7 @@
 
 #pragma mark -
 
-@implementation UICollectionViewLeftAlignedLayout
+@implementation LLUICollectionViewLeftAlignedLayout
 
 #pragma mark - UICollectionViewLayout
 

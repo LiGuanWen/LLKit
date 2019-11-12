@@ -26,14 +26,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UICollectionViewLeftAlignedLayout : UICollectionViewFlowLayout
+@interface LLUICollectionViewLeftAlignedLayout : UICollectionViewFlowLayout
 
 @end
 
 /**
  *  Just a convenience protocol to keep things consistent.
  *  Someone could find it confusing for a delegate object to conform to UICollectionViewDelegateFlowLayout
- *  while using UICollectionViewLeftAlignedLayout.
+ *  while using LLUICollectionViewLeftAlignedLayout.
  */
 @protocol UICollectionViewDelegateLeftAlignedLayout <UICollectionViewDelegateFlowLayout>
 
