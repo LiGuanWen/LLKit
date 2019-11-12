@@ -20,13 +20,13 @@
 
 #import "LLUICollectionViewLeftAlignedLayout.h"
 
-@interface UICollectionViewLayoutAttributes (LeftAligned)
+@interface UICollectionViewLayoutAttributes (LLLeftAligned)
 
 - (void)leftAlignFrameWithSectionInset:(UIEdgeInsets)sectionInset;
 
 @end
 
-@implementation UICollectionViewLayoutAttributes (LeftAligned)
+@implementation UICollectionViewLayoutAttributes (LLLeftAligned)
 
 - (void)leftAlignFrameWithSectionInset:(UIEdgeInsets)sectionInset
 {
