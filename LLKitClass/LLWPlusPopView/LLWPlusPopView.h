@@ -18,6 +18,6 @@
  @param columnCount 一行个数  大于0
  @param selectBlock 点击的Item回调
  */
-+ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles columnCount:(NSInteger)columnCount selectBlock:(void (^)(NSInteger))selectBlock ;
++ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles columnCount:(NSInteger)columnCount selectBlock:(void (^)(NSInteger index))selectBlock;
 
 @end

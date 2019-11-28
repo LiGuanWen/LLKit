@@ -116,7 +116,7 @@ s.default_subspecs = 'LLUIKit',
     # s.dependency 'SDCycleScrollView', '~> 1.66'  #滚动广告brand
   
     # s.dependency 'HHTransition'   #转场动画
-
+#  KSPhotoBrowser
 
 # pod 'HJTabViewController', '~> 1.0'   #防网易页面 
 

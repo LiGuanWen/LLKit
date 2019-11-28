@@ -28,7 +28,7 @@ static NSTimeInterval kAnimationDuration = 0.3;
 
 @implementation LLWPlusPopView
 
-+ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles columnCount:(NSInteger)columnCount selectBlock:(void (^)(NSInteger))selectBlock {
++ (void)showWithImages:(NSArray *)imgs titles:(NSArray *)titles columnCount:(NSInteger)columnCount selectBlock:(void (^)(NSInteger index))selectBlock {
     CGFloat dis = 0;
     if ([LLUtility isIPhoneXSeries]) {
         dis = 34;
