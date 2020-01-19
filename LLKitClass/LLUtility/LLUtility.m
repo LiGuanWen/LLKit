@@ -853,7 +853,7 @@ UIViewController * currViewController(void)
  @param message 消息
  */
 + (void)showSheetWithCurVC:(UIViewController *)curVC title:(NSString *__nullable)title message:(NSString *__nullable)message firstButtonTitle:(NSString *__nullable)firstButtonTitle secondButtonTitle:(NSString *__nullable)secondButtonTitle thirdButtonTitle:(NSString *__nullable)thirdButtonTitle firstButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))firstButtonBlock secondButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))secondButtonBlock thirdButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))thirdButtonBlock cancelButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))cancelButtonBlock{
-    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:title?:@"" message:message?:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     if (firstButtonTitle && firstButtonTitle.length > 0) {
         UIAlertAction *leftButton = [UIAlertAction actionWithTitle:firstButtonTitle style:UIAlertActionStyleDefault handler:firstButtonBlock] ;
         [sheet addAction:leftButton];
@@ -866,7 +866,7 @@ UIViewController * currViewController(void)
         UIAlertAction *rightButton = [UIAlertAction actionWithTitle:thirdButtonTitle style:UIAlertActionStyleDefault handler:thirdButtonBlock];
         [sheet addAction:rightButton];
     }
-    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:thirdButtonTitle style:UIAlertActionStyleCancel handler:cancelButtonBlock];
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:cancelButtonBlock];
         [sheet addAction:cancelButton];
     [curVC presentViewController:sheet animated:YES completion:nil];
 }
