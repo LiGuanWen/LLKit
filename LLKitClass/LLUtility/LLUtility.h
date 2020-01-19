@@ -187,7 +187,7 @@ UIViewController * currViewController(void);   //与VisibleViewController功能�
  @param title 标题
  @param message 消息
  */
-+ (void)showSheetWithCurVC:(UIViewController *)curVC title:(NSString *__nullable)title message:(NSString *__nullable)message firstButtonTitle:(NSString *__nullable)firstButtonTitle secondButtonTitle:(NSString *__nullable)secondButtonTitle thirdButtonTitle:(NSString *__nullable)thirdButtonTitle firstButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))firstButtonBlock secondButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))secondButtonBlock thirdButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))thirdButtonBlock;
++ (void)showSheetWithCurVC:(UIViewController *)curVC title:(NSString *__nullable)title message:(NSString *__nullable)message firstButtonTitle:(NSString *__nullable)firstButtonTitle secondButtonTitle:(NSString *__nullable)secondButtonTitle thirdButtonTitle:(NSString *__nullable)thirdButtonTitle firstButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))firstButtonBlock secondButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))secondButtonBlock thirdButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))thirdButtonBlock cancelButtonBlock:(void (^_Nullable)(UIAlertAction * _Nonnull action))cancelButtonBlock;
 
 
 /**
